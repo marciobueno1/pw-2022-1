@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Terceiro Exemplo</title>
+    <script src="ex03.js"></script>
+    <style>
+      div {
+        border-style: solid;
+        border-width: thin;
+        float: left;
+      }
+      .div2 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="minhaDiv">
+      <h1 id="titulo">Título da Página</h1>
+      <p>Exemplo de parágrafo...</p>
+      <button onclick="alterarTitulo()">Alterar Título</button>
+      <button onclick="alterarDiv()">Alterar Div</button>
+    </div>
+    <div class="div2">
+      <h1 id="titulo">Título da Página</h1>
+      <p>Exemplo de parágrafo...</p>
+      <button onclick="alterarTitulo()">Alterar Título</button>
+      <button onclick="alterarDiv()">Alterar Div</button>
+    </div>
+    <button onclick="restaurarDiv()">Restaurar Div</button>
+  </body>
+</html>
