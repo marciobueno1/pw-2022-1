@@ -1,9 +1,6 @@
-const lista = document.getElementById("lista");
-const inputNome = document.getElementById("inputNome");
-const btInserir = document.getElementById("btInserir");
-const btLimpar = document.getElementById("btLimpar");
-
 function inserir() {
+  const lista = document.getElementById("lista");
+  const inputNome = document.getElementById("inputNome");
   const nome = inputNome.value.trim();
   if (nome) {
     lista.innerHTML += `<li>${nome}</li>`;
@@ -13,17 +10,15 @@ function inserir() {
 }
 
 function limpar() {
+  const lista = document.getElementById("lista");
+  const inputNome = document.getElementById("inputNome");
   lista.innerHTML = "";
   inputNome.value = "";
   inputNome.focus();
 }
 
-function capturarEnter(event) {
+function capturaEnter(event) {
   if (event.keyCode === 13) {
-    btInserir.click();
+    document.getElementById("btInserir").click();
   }
 }
-
-btInserir.onclick = inserir;
-btLimpar.onclick = limpar;
-inputNome.onkeyup = capturarEnter;
