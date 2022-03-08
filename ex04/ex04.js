@@ -35,7 +35,25 @@ function criarLista() {
   }
 }
 
+function inputNomeOnFocus() {
+  console.log("Entrou no input nome");
+}
+
+function inputNomeOnBlur(event) {
+  console.log("Saiu do input nome");
+  if (!inputNome.value) {
+    alert("Precisa digitar o nome!");
+  }
+}
+
+function inputNomeOnMouseOver() {
+  console.log("on mouse over");
+}
+
 btInserir.onclick = inserir;
 document.getElementById("btLimpar").onclick = limpar;
 inputNome.onkeyup = capturarEnter;
+inputNome.onfocus = inputNomeOnFocus;
+inputNome.onblur = inputNomeOnBlur;
+lista.onmouseover = inputNomeOnMouseOver;
 btCriarLista.onclick = criarLista;
