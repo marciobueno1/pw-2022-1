@@ -46,14 +46,29 @@ function inputNomeOnBlur(event) {
   }
 }
 
-function inputNomeOnMouseOver() {
+function handleListaMouseOver() {
   console.log("on mouse over");
+}
+
+function handleListaMouseEnter() {
+  console.log("on mouse enter");
+}
+
+function handleInputNomeChange(event) {
+  console.log(event);
+  console.log("valor atual = ", event.target.value);
+  console.log("onChange");
 }
 
 btInserir.onclick = inserir;
 document.getElementById("btLimpar").onclick = limpar;
+
 inputNome.onkeyup = capturarEnter;
 inputNome.onfocus = inputNomeOnFocus;
 inputNome.onblur = inputNomeOnBlur;
-lista.onmouseover = inputNomeOnMouseOver;
+inputNome.onchange = handleInputNomeChange;
+
+lista.onmouseover = handleListaMouseOver;
+lista.onmouseenter = handleListaMouseEnter;
+
 btCriarLista.onclick = criarLista;
