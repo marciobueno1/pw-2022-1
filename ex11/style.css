@@ -1,0 +1,30 @@
+pre {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+a:hover {
+  border: dashed;
+}
+
+.preDireita {
+  text-align: right;
+}
+
+#tituloPrincipal {
+  text-transform: uppercase;
+}
+
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+p::first-line {
+  color: #0000ff;
+  font-variant: small-caps;
+}
+
+a[target="_blank"] {
+  font-size: xx-large;
+}
