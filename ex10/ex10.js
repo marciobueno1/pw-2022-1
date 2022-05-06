@@ -11,13 +11,24 @@ const lista = document.getElementById("lista");
 function gerarLista() {
   lista.innerHTML = "";
   for (let i = 0; i < pessoas.length; ++i) {
-    // lista.innerHTML += `<li>${i}</li>`;
-    const li = document.createElement("li");
+    const div = document.createElement("div");
+    const h3 = document.createElement("h3");
     const txt = document.createTextNode(
       `Nome: ${pessoas[i].nome} - Idade: ${pessoas[i].idade}`
     );
-    li.appendChild(txt);
-    lista.appendChild(li);
+    const btExibir = document.createElement("button");
+    const btTxt = document.createTextNode("Exibir");
+    btExibir.appendChild(btTxt);
+    btExibir.onclick = () => handleClickBtExibir(pessoas[i]);
+    const img = document.createElement("img");
+    img.src = pessoas[i].foto;
+    img.width = 150;
+    img.height = 150;
+    h3.appendChild(txt);
+    div.appendChild(h3);
+    div.appendChild(btExibir);
+    div.appendChild(img);
+    lista.appendChild(div);
   }
 }
 
@@ -48,13 +59,19 @@ const fetchPessoas2 = () => {
       for (const object of results) {
         const nome = object.get("nome");
         const idade = object.get("idade");
-        pessoas.push({ nome, idade });
+        const foto = object.get("foto").url();
+        pessoas.push({ nome, idade, foto });
       }
       gerarLista();
     })
     .catch((error) => {
       console.error("Error while fetching Pessoa", error);
     });
+};
+
+const handleClickBtExibir = (obj) => {
+  console.log(JSON.stringify(obj));
+  alert(JSON.stringify(obj));
 };
 
 fetchPessoas2();
