@@ -5,10 +5,9 @@ Parse.initialize(
   "yV80N7m3ZKZmTgdMGlVDYJaEteabaXaUXeaT2VW9" // This is your Javascript key
 );
 
-let pessoas = [];
 const lista = document.getElementById("lista");
 
-function gerarLista() {
+function gerarLista(pessoas) {
   lista.innerHTML = "";
   for (let i = 0; i < pessoas.length; ++i) {
     const div = document.createElement("div");
@@ -38,9 +37,7 @@ const fetchPessoasBack4App = () => {
   query
     .find()
     .then((results) => {
-      pessoas = results;
-      console.log("results", results);
-      gerarLista();
+      gerarLista(results);
     })
     .catch((error) => {
       console.error("Error while fetching Pessoa", error);
@@ -50,6 +47,11 @@ const fetchPessoasBack4App = () => {
 const handleClickBtExibir = (obj) => {
   console.log(obj.toJSON());
   alert(obj.toJSON());
+  console.log("id", obj.id);
+  console.log("createdAt", obj.createdAt);
+  console.log("updatedAt", obj.updatedAt);
+  console.log("nome", obj.nome);
+  console.log('get("nome")', obj.get("nome"));
 };
 
 fetchPessoasBack4App();
