@@ -1,3 +1,3 @@
 # Programação para Web
-## Curso de Sistemas de Informação para Internet
+## Curso de Sistemas para Internet
 ## Universidade Católica de Pernambuco (UNICAP)
